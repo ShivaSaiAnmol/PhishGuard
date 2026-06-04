@@ -1,31 +1,151 @@
-# PhishGuard - Scam Email & URL Detection System
+# 🛡️ PhishGuard
 
-## Overview
+## AI-Powered Scam Email & Malicious URL Detection System
 
-PhishGuard is an AI-powered phishing detection system designed to identify malicious emails and suspicious URLs. The system leverages Machine Learning and Natural Language Processing (NLP) techniques to analyze email content and URLs, helping users detect phishing attempts and improve cybersecurity awareness.
+> **Protecting users from phishing attacks through intelligent URL verification and AI-driven email threat analysis.**
 
-## Features
+---
 
-* Phishing Email Detection
+## 🚨 Why PhishGuard?
 
-  * Analyzes email content and predicts whether it is legitimate or phishing.
-* URL Safety Analysis
+Every day, cybercriminals send millions of phishing emails and create fraudulent websites designed to steal sensitive information such as passwords, banking credentials, and personal data.
 
-  * Detects suspicious and malicious URLs using machine learning models.
-* NLP-Based Text Processing
+The challenge is that many phishing attempts closely resemble legitimate communications, making them difficult to identify manually.
 
-  * Processes and extracts meaningful features from email text.
-* User-Friendly Web Interface
+**PhishGuard** was built to solve this problem by providing automated threat detection and risk assessment for both URLs and email content.
 
-  * Simple and intuitive interface for submitting emails and URLs.
-* Real-Time Predictions
+---
 
-  * Provides instant results with confidence scores.
-* Secure and Efficient
+## 🎯 Project Overview
 
-  * Designed to assist users in avoiding online scams and phishing attacks.
+PhishGuard is a cybersecurity-focused web application that helps users identify potentially dangerous websites and scam emails before interacting with them.
 
-## Technologies Used
+By combining Google's threat intelligence with AI-powered content analysis, the system evaluates suspicious inputs and generates a detailed threat assessment.
+
+---
+
+## ✨ Core Features
+
+### 🌐 Malicious URL Detection
+
+Analyze suspicious links using Google's Safe Browsing database.
+
+**Capabilities:**
+
+* Detect phishing websites
+* Identify malware-hosting URLs
+* Flag deceptive domains
+* Verify website safety
+
+---
+
+### 📧 Email Threat Analysis
+
+Analyze email content using AI and NLP techniques.
+
+**Detects:**
+
+* Phishing attempts
+* Credential harvesting requests
+* Fake login pages
+* Financial scams
+* Urgency-based social engineering attacks
+
+---
+
+### 📊 Risk Score Generation
+
+Each analysis generates a risk score based on multiple threat indicators.
+
+```text
+Risk Score: 0 – 100
+
+0 - 30    → Safe ✅
+31 - 70   → Suspicious ⚠️
+71 - 100  → Malicious 🚨
+```
+
+---
+
+### 📝 Threat Classification
+
+Results are categorized as:
+
+🟢 Safe
+
+🟡 Suspicious
+
+🔴 Malicious
+
+---
+
+### 📄 Detailed Security Reports
+
+Users receive:
+
+* Threat level
+* Risk score
+* Detected indicators
+* Security recommendations
+
+---
+
+## ⚙️ System Workflow
+
+```text
+                    User Input
+                         │
+          ┌──────────────┴──────────────┐
+          │                             │
+          ▼                             ▼
+      URL Input                  Email Content
+          │                             │
+          ▼                             ▼
+ Google Safe Browsing         Gemini AI Analysis
+          │                             │
+          ▼                             ▼
+ Threat Detection           NLP Processing
+          │                             │
+          └──────────────┬──────────────┘
+                         ▼
+                 Risk Assessment
+                         │
+                         ▼
+                Threat Classification
+                         │
+                         ▼
+          Safe / Suspicious / Malicious
+```
+
+---
+
+## 🔍 Detection Indicators
+
+### URL Analysis
+
+The system checks:
+
+* Known phishing URLs
+* Malware-hosting websites
+* Unsafe domains
+* Blacklisted websites
+* Threat intelligence databases
+
+### Email Analysis
+
+The system looks for:
+
+* Urgent language
+* Account suspension threats
+* Password reset scams
+* Fake login requests
+* Credential theft attempts
+* Financial fraud indicators
+* Suspicious sender behavior
+
+---
+
+## 🛠️ Technology Stack
 
 ### Frontend
 
@@ -38,29 +158,23 @@ PhishGuard is an AI-powered phishing detection system designed to identify malic
 * Python
 * Flask
 
-### Machine Learning & NLP
+### APIs & AI
 
-* Scikit-learn
-* Pandas
-* NumPy
-* NLTK
-* TF-IDF Vectorization
+* Google Safe Browsing API
+* Gemini API
 
-### Dataset
+### Database
 
-* Public phishing email datasets
-* Malicious and legitimate URL datasets
+* SQLite / MongoDB
 
-## System Architecture
+### Development Tools
 
-1. User submits an email or URL.
-2. Input data is preprocessed.
-3. Relevant features are extracted.
-4. Machine learning model analyzes the input.
-5. Prediction is generated.
-6. Result is displayed to the user.
+* Git
+* GitHub
 
-## Project Structure
+---
+
+## 📂 Project Structure
 
 ```text
 PhishGuard/
@@ -68,51 +182,70 @@ PhishGuard/
 ├── static/
 │   ├── css/
 │   ├── js/
-│   └── images/
+│   └── assets/
 │
 ├── templates/
 │   ├── index.html
-│   ├── email_detection.html
-│   └── url_detection.html
-│
-├── models/
-│   ├── email_model.pkl
-│   └── url_model.pkl
-│
-├── datasets/
+│   ├── url_analysis.html
+│   └── email_analysis.html
 │
 ├── app.py
+├── config.py
 ├── requirements.txt
+├── database.db
 └── README.md
 ```
 
-## Installation
+---
 
-### Clone the Repository
+## 📸 Sample Analysis
 
-```bash
-git clone https://github.com/ShivaSaiAnmol/PhishGuard---Scam-Email-Url-Detection-System.git
-cd PhishGuard---Scam-Email-Url-Detection-System
+### URL Check
+
+```text
+Input URL:
+https://secure-bank-login-update.xyz
+
+Threat Analysis:
+• Domain flagged as phishing
+• Unsafe reputation detected
+
+Risk Score:
+92/100
+
+Result:
+🚨 MALICIOUS
 ```
 
-### Create Virtual Environment
+---
 
-```bash
-python -m venv venv
+### Email Analysis
+
+```text
+Subject:
+URGENT: Verify Your Account
+
+Threat Indicators:
+• Urgency tactics detected
+• Credential request identified
+• Suspicious login link found
+
+Risk Score:
+89/100
+
+Result:
+🚨 PHISHING EMAIL
 ```
 
-### Activate Virtual Environment
+---
 
-Windows:
+## 🚀 Installation
 
-```bash
-venv\Scripts\activate
-```
-
-Linux/Mac:
+### Clone Repository
 
 ```bash
-source venv/bin/activate
+git clone https://github.com/yourusername/PhishGuard.git
+cd PhishGuard
 ```
 
 ### Install Dependencies
@@ -121,36 +254,76 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Run the Application
+### Configure API Keys
+
+Add your:
+
+* Google Safe Browsing API Key
+* Gemini API Key
+
+inside your configuration file.
+
+### Run Application
 
 ```bash
 python app.py
 ```
 
-Open your browser and visit:
+Open:
 
 ```text
-http://127.0.0.1:5000
+http://localhost:5000
 ```
 
-## Machine Learning Workflow
+---
 
-* Data Collection
-* Data Cleaning
-* Feature Extraction
-* TF-IDF Vectorization
-* Model Training
-* Model Evaluation
-* Deployment using Flask
+## 🎓 What I Learned
 
-## Results
+This project helped me gain hands-on experience in:
 
-The system successfully identifies phishing emails and malicious URLs, helping users make safer decisions online and reducing the risk of cyber attacks.
+* Cybersecurity Fundamentals
+* Threat Intelligence Integration
+* REST API Integration
+* Natural Language Processing
+* AI-Powered Content Analysis
+* Flask Web Development
+* Risk Assessment Systems
+* Software Testing & Debugging
+
+---
+
+## 🔮 Future Enhancements
+
+### 🧩 Browser Extension
+
+Real-time website scanning while browsing.
+
+### 🤖 Advanced AI Models
+
+Use LLMs and transformer-based models for deeper threat analysis.
+
+### 📱 Mobile Application
+
+Threat detection on smartphones.
+
+### ☁️ Cloud Deployment
+
+Deploy using AWS, Azure, or Google Cloud.
+
+### 📊 Security Analytics Dashboard
+
+Track phishing trends and threat statistics.
+
+---
+
+## ⭐ Support the Project
+
+If you found this project useful:
+
+⭐ Star the Repository
+
+🍴 Fork the Project
+
+🚀 Contribute New Features
 
 
-## Acknowledgements
-
-* Flask Documentation
-* Scikit-learn Documentation
-* NLTK Documentation
-* Open-source phishing datasets and cybersecurity research resources
